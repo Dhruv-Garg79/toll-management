@@ -1,0 +1,27 @@
+{
+  "name": "sample-project",
+  "version": "1.0.0",
+  "description": "sample project",
+  "main": "output/index.js",
+  "keywords": [],
+  "author": "Dhruv Garg",
+  "license": "ISC",
+  "scripts": {
+    "compile:watch": "tsc --build --watch",
+    "dev": "NODE_ENV=local nodemon --experimental-modules --es-module-specifier-resolution=node"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "fastify": "^4.23.2",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
