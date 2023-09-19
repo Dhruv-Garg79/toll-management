@@ -1,5 +1,6 @@
 import server from "./config/app";
 import { envConfig } from "./config/envConfig";
+import { mongoClient } from "./config/mongodb";
 
 const exitHandler = (error) => {
 	console.error(error);
@@ -22,9 +23,11 @@ process.on("SIGTERM", () => {
 
 const start = async () => {
 	try {
+		await mongoClient.connect();
 		await server.listen({ port: envConfig.serverPort });
 		console.info(`Listening to port ${envConfig.serverPort}\n`);
 	} catch (err) {
+		console.error(err);
 		exitHandler("starting server failed");
 	}
 };
